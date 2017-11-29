@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
     public void onFragmentInteraction(int id) {
         switch(id) {
             case R.id.one_vs_ia:
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                JeuFragment jeuFragment = new JeuFragment();
-                fragmentTransaction.replace(R.id.game_container, jeuFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-                break;
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            JeuFragment jeuFragment = new JeuFragment();
+            fragmentTransaction.replace(R.id.game_container, jeuFragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+            break;
         }
     }
 
