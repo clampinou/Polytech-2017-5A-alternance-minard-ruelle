@@ -2,8 +2,10 @@
 <resources>
     <dimen name="heightTvLabel">25dp</dimen>
     <dimen name="margin100">100dp</dimen>
+    <dimen name="margin130">130dp</dimen>
     <dimen name="widthSbVolume">174dp</dimen>
     <dimen name="heightSbVolume">50dp</dimen>
     <dimen name="margin40">40dp</dimen>
+    <dimen name="margin60">60dp</dimen>
     <dimen name="margin20">20dp</dimen>
 </resources>
