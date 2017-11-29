@@ -15,4 +15,8 @@
     <dimen name="button_big_width">350dp</dimen>
     <dimen name="margin_little">10dp</dimen>
     <dimen name="margin_big">50dp</dimen>
+    <dimen name="glWidthJeu">340dp</dimen>
+    <dimen name="glHeightJeu">140dp</dimen>
+    <dimen name="btWidthJeu">170dp</dimen>
+    <dimen name="btHeightJeu">70dp</dimen>
 </resources>
