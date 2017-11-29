@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements MenuFragment.OnFragmentInteractionListener {
+import com.example.epulapp.tpapplicationmobile.dummy.DummyContent;
+
+public class MainActivity extends AppCompatActivity implements BeerFragment.OnListFragmentInteractionListener {
 
     private FragmentManager fragmentManager;
 
@@ -22,24 +24,32 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        MenuFragment menuFragment = new MenuFragment();
-        fragmentTransaction.add(R.id.game_container, menuFragment);
+//        MenuFragment menuFragment = new MenuFragment();
+        BeerFragment beerFragment = new BeerFragment();
+        fragmentTransaction.add(R.id.game_container, beerFragment);
         fragmentTransaction.commit();
         
     }
 
+    // onFragmentInteraction de TP2
+//    @Override
+//    public void onFragmentInteraction(int id) {
+//        switch(id) {
+//            case R.id.one_vs_ia:
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                JeuFragment jeuFragment = new JeuFragment();
+//                fragmentTransaction.replace(R.id.game_container, jeuFragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
+//                break;
+//        }
+//    }
+
     @Override
-    public void onFragmentInteraction(int id) {
-        switch(id) {
-            case R.id.one_vs_ia:
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                JeuFragment jeuFragment = new JeuFragment();
-                fragmentTransaction.replace(R.id.game_container, jeuFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-                break;
-        }
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
+
 
 //    @Override
 //    public void onClick(View view) {
