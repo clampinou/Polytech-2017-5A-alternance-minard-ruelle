@@ -14,6 +14,7 @@
     <dimen name="button_little_width">160dp</dimen>
     <dimen name="button_big_width">350dp</dimen>
     <dimen name="margin_little">10dp</dimen>
+    <dimen name="margin_very_little">5dp</dimen>
     <dimen name="margin_big">50dp</dimen>
     <dimen name="glWidthJeu">340dp</dimen>
     <dimen name="glHeightJeu">140dp</dimen>
@@ -28,4 +29,7 @@
     <dimen name="txtLegendWidth">150dp</dimen>
     <dimen name="marginBig">30dp</dimen>
     <dimen name="descriptionWidth">350dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="font_size_name_beer">20sp</dimen>
+    <dimen name="taille_img_beer">80dp</dimen>
 </resources>
