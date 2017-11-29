@@ -18,15 +18,13 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("lifeCycle", "onCreate");
 
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-//        MenuFragment menuFragment = new MenuFragment();
-//        fragmentTransaction.add(R.id.game_container, menuFragment);
-//        fragmentTransaction.commit();
-
+        MenuFragment menuFragment = new MenuFragment();
+        fragmentTransaction.add(R.id.game_container, menuFragment);
+        fragmentTransaction.commit();
         
     }
 
