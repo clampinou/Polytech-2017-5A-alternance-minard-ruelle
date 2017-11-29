@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.epulapp.tpapplicationmobile.JeuActivity">
+    tools:context="com.example.epulapp.tpapplicationmobile.JeuFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="wrap_content"
@@ -123,37 +123,37 @@
             app:layout_constraintTop_toBottomOf="@+id/pbTemps">
 
             <GridLayout
-                android:layout_width="340dp"
-                android:layout_height="140dp"
+                android:layout_width="@dimen/glWidthJeu"
+                android:layout_height="@dimen/glHeightJeu"
                 android:columnCount="2"
                 android:rowCount="2">
 
                 <Button
                     android:id="@+id/button1"
                     android:layout_gravity="left|top"
-                    android:layout_width="170dp"
-                    android:layout_height="70dp"
+                    android:layout_width="@dimen/btWidthJeu"
+                    android:layout_height="@dimen/btHeightJeu"
                     android:text="Button" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_gravity="left|top"
-                    android:layout_width="170dp"
-                    android:layout_height="70dp"
+                    android:layout_width="@dimen/btWidthJeu"
+                    android:layout_height="@dimen/btHeightJeu"
                     android:text="Button" />
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_gravity="left|top"
-                    android:layout_width="170dp"
-                    android:layout_height="70dp"
+                    android:layout_width="@dimen/btWidthJeu"
+                    android:layout_height="@dimen/btHeightJeu"
                     android:text="Button" />
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_gravity="left|top"
-                    android:layout_width="170dp"
-                    android:layout_height="70dp"
+                    android:layout_width="@dimen/btWidthJeu"
+                    android:layout_height="@dimen/btHeightJeu"
                     android:text="Button" />
 
             </GridLayout>
