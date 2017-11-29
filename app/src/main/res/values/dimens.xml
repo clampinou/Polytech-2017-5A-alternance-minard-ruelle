@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="heightTvLabel">25dp</dimen>
+    <dimen name="margin100">100dp</dimen>
+    <dimen name="widthSbVolume">174dp</dimen>
+    <dimen name="heightSbVolume">50dp</dimen>
+    <dimen name="margin40">40dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+</resources>
