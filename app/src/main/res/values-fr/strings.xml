@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TPApplicationMobile</string>
+    <string name="textView_offline">Mode hors ligne</string>
+    <string name="button_1_vs_ia">1 vs. IA</string>
+    <string name="button_1_vs_1">1 vs. 1</string>
+    <string name="button_team_a_vs_team_b">Equipe A vs. Equipe B</string>
+    <string name="textView_online">Mode en ligne</string>
+    <string name="button_1_vs_1_online">1 vs. 1 en ligne</string>
+</resources>

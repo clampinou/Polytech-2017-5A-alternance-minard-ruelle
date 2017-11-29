@@ -6,27 +6,78 @@
     android:layout_height="match_parent"
     tools:context="com.example.epulapp.tpapplicationmobile.MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="49dp"
-        android:text="Button"
-        tools:layout_editor_absoluteY="101dp"
-        tools:layout_editor_absoluteX="28dp" />
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/div_haut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="49dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="195dp"
-        tools:layout_editor_absoluteY="101dp" />
+        <TextView
+            android:textSize="@dimen/textView_font_size"
+            android:gravity="center"
+            android:id="@+id/text_offline"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/textView_offline"
+            app:layout_constraintBottom_toTopOf="@+id/one_vs_ia"
+            app:layout_constraintLeft_toLeftOf="@+id/one_vs_ia" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="316dp"
-        android:layout_height="47dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="169dp" />
+        <Button
+            android:id="@+id/one_vs_ia"
+            android:layout_width="@dimen/button_little_width"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/button_1_vs_ia"
+            app:layout_constraintTop_toBottomOf="@+id/text_offline"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/one_vs_one"
+            android:layout_width="@dimen/button_little_width"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/button_1_vs_1"
+
+            app:layout_constraintRight_toRightOf="@+id/team_vs_team"
+            app:layout_constraintTop_toTopOf="@+id/one_vs_ia"/>
+
+        <Button
+            android:id="@+id/team_vs_team"
+            android:layout_width="@dimen/button_big_width"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/button_team_a_vs_team_b"
+            app:layout_constraintLeft_toLeftOf="@+id/one_vs_ia"
+            app:layout_constraintTop_toBottomOf="@+id/one_vs_one"
+            android:layout_marginTop="@dimen/margin_little"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/div_bas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_haut"
+        android:layout_marginTop="@dimen/margin_big">
+
+        <TextView
+            android:textSize="@dimen/textView_font_size"
+            android:gravity="center"
+            android:id="@+id/text_online"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/textView_online" />
+
+        <Button
+            android:id="@+id/one_vs_one_online"
+            android:layout_width="@dimen/button_big_width"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/button_1_vs_1_online"
+            app:layout_constraintTop_toBottomOf="@+id/text_online"
+            app:layout_constraintLeft_toLeftOf="@+id/text_online"/>
+
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

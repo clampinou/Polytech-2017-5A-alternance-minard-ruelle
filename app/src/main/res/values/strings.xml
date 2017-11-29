@@ -3,4 +3,11 @@
     <string name="tvJoueur">Player : </string>
     <string name="tvVies">Lifes : </string>
     <string name="tvScore">Score : </string>
+    <string name="app_name">TPApplicationMobile</string>
+    <string name="textView_offline">Offline</string>
+    <string name="button_1_vs_ia">1 vs. IA</string>
+    <string name="button_1_vs_1">1 vs. 1</string>
+    <string name="button_team_a_vs_team_b">Team A vs. Team B</string>
+    <string name="textView_online">Online</string>
+    <string name="button_1_vs_1_online">1 vs. 1 Online</string>
 </resources>
