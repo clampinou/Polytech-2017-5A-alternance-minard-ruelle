@@ -1,6 +1,7 @@
 package com.example.epulapp.tpapplicationmobile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -60,6 +61,15 @@ public class JeuFragment extends Fragment {
 //        }
 //    }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Intent intent = new Intent();
+        intent.setAction("com.jeu.broadcast.NOTIF_JEU");
+        intent.putExtra("data","Notice me senpai!");
+        getActivity().sendBroadcast(intent);
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

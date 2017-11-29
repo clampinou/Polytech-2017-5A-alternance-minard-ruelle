@@ -7,4 +7,8 @@
     <string name="button_team_a_vs_team_b">Equipe A vs. Equipe B</string>
     <string name="textView_online">Mode en ligne</string>
     <string name="button_1_vs_1_online">1 vs. 1 en ligne</string>
+    <string name="tvEquipe">Equipe : </string>
+    <string name="tvJoueur">Joueur : </string>
+    <string name="tvVies">Vies : </string>
+    <string name="tvScore">Score : </string>
 </resources>

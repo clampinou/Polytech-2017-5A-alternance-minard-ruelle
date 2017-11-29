@@ -2,6 +2,7 @@ package com.example.epulapp.tpapplicationmobile;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,12 +23,11 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        MenuFragment menuFragment = new MenuFragment();
-        fragmentTransaction.add(R.id.game_container, menuFragment);
-        fragmentTransaction.commit();
+//        MenuFragment menuFragment = new MenuFragment();
+//        fragmentTransaction.add(R.id.game_container, menuFragment);
+//        fragmentTransaction.commit();
 
-//        Button oneVsIa = (Button) findViewById(R.id.one_vs_ia);
-//        oneVsIa.setOnClickListener(this);
+        
     }
 
     @Override
@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("lifeCycle", "onResume");
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.epulapp.tpapplicationmobile;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -54,7 +55,7 @@ public class MenuFragment extends Fragment {
 //            mParam2 = getArguments().getString(ARG_PARAM2);
 //        }
 //    }
-//
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -99,7 +100,13 @@ public class MenuFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-//
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//    }
+
+    //
 //    /**
 //     * This interface must be implemented by activities that contain this
 //     * fragment to allow an interaction in this fragment to be communicated
