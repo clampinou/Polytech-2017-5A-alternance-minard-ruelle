@@ -13,4 +13,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="beer_name">Beer name</string>
+    <string name="beer_tagline">Beer Tagline</string>
+    <string name="legend_abv">Alcohol By Volume (ABV)</string>
+    <string name="abv">9,8°</string>
+    <string name="legend_ibu">International Bitterness Units scale (IBU)</string>
+    <string name="ibu">15</string>
+    <string name="beer_description">Cette bière est faite à partir de ça et de ça et de ça et même de ça parce qu\'elle est vraiment super super bien d\'abord</string>
 </resources>

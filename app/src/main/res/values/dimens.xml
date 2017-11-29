@@ -19,4 +19,13 @@
     <dimen name="glHeightJeu">140dp</dimen>
     <dimen name="btWidthJeu">170dp</dimen>
     <dimen name="btHeightJeu">70dp</dimen>
+    <dimen name="marginLittle">10dp</dimen>
+    <dimen name="txtLittle">18sp</dimen>
+    <dimen name="txtBig">25sp</dimen>
+    <dimen name="imgWidth">180dp</dimen>
+    <dimen name="imgHeight">250dp</dimen>
+    <dimen name="marginMedium">20dp</dimen>
+    <dimen name="txtLegendWidth">150dp</dimen>
+    <dimen name="marginBig">30dp</dimen>
+    <dimen name="descriptionWidth">350dp</dimen>
 </resources>

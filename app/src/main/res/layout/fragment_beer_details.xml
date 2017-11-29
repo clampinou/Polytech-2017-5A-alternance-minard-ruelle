@@ -1,0 +1,102 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.epulapp.tpapplicationmobile.BeerDetails">
+
+    <TextView
+        android:id="@+id/txtBeerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/marginLittle"
+        android:textSize="@dimen/txtBig"
+        android:textStyle="bold"
+        android:text="@string/beer_name"
+        />
+
+    <TextView
+        android:id="@+id/txtBeerTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtBeerName"
+        android:textSize="@dimen/txtLittle"
+        android:text="@string/beer_tagline"/>
+
+    <ImageView
+        android:id="@+id/imgBeer"
+        android:layout_width="@dimen/imgWidth"
+        android:layout_height="@dimen/imgHeight"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtBeerTagline"
+        android:layout_marginLeft="@dimen/marginMedium"
+        android:layout_marginTop="@dimen/marginMedium"
+        app:srcCompat="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/txtLegendABV"
+        android:layout_width="@dimen/txtLegendWidth"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/imgBeer"
+        app:layout_constraintTop_toTopOf="@id/imgBeer"
+        android:text="@string/legend_abv"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/marginMedium"
+        android:textSize="@dimen/txtLittle"/>
+
+    <TextView
+        android:id="@+id/txtABV"
+        android:layout_width="@dimen/txtLegendWidth"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtLegendABV"
+        app:layout_constraintLeft_toRightOf="@id/imgBeer"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="@dimen/txtBig"
+        android:text="@string/abv"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/marginLittle"/>
+
+    <TextView
+        android:id="@+id/txtLegendIBU"
+        android:layout_width="@dimen/txtLegendWidth"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/imgBeer"
+        app:layout_constraintTop_toBottomOf="@id/txtABV"
+        android:text="@string/legend_ibu"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/marginBig"
+        android:textSize="@dimen/txtLittle"/>
+
+    <TextView
+        android:id="@+id/txtIBU"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtLegendIBU"
+        app:layout_constraintLeft_toRightOf="@id/imgBeer"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="@dimen/txtBig"
+        android:text="@string/ibu"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/marginLittle"/>
+
+    <TextView
+        android:layout_width="@dimen/descriptionWidth"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/imgBeer"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/marginMedium"
+        android:textSize="@dimen/txtLittle"
+        android:text="@string/beer_description"/>
+
+</android.support.constraint.ConstraintLayout>
