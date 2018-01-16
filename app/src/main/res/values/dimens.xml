@@ -23,4 +23,13 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="font_size_name_beer">20sp</dimen>
     <dimen name="taille_img_beer">80dp</dimen>
+    <dimen name="marginLittle">10dp</dimen>
+    <dimen name="txtLittle">18sp</dimen>
+    <dimen name="txtBig">25sp</dimen>
+    <dimen name="imgWidth">180dp</dimen>
+    <dimen name="imgHeight">250dp</dimen>
+    <dimen name="marginMedium">20dp</dimen>
+    <dimen name="txtLegendWidth">150dp</dimen>
+    <dimen name="marginBig">30dp</dimen>
+    <dimen name="descriptionWidth">350dp</dimen>
 </resources>

@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,22 +13,32 @@ import android.widget.Button;
 
 import com.example.epulapp.tpapplicationmobile.dummy.DummyContent;
 
-public class MainActivity extends AppCompatActivity implements BeerFragment.OnListFragmentInteractionListener {
+public class MainActivity extends FragmentActivity implements BeerFragment.OnListFragmentInteractionListener {
 
-    private FragmentManager fragmentManager;
+    private BeerFragment beerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentManager = getFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-//        MenuFragment menuFragment = new MenuFragment();
-        BeerFragment beerFragment = new BeerFragment();
-        fragmentTransaction.add(R.id.game_container, beerFragment);
-        fragmentTransaction.commit();
+        if (findViewById(R.id.game_container) != null) {
+            if (savedInstanceState != null) {
+                return;
+            }
+            if (beerFragment == null) {
+                beerFragment = new BeerFragment();
+            }
+            beerFragment.setArguments(getIntent().getExtras());
+            getFragmentManager().beginTransaction().add(R.id.game_container, beerFragment).commit();
+        }
+
+//        BeerFragment beerFragment = new BeerFragment();
+//        fragmentTransaction.add(R.id.game_container, beerFragment);
+//        fragmentTransaction.commit();
         
     }
 
@@ -47,7 +58,10 @@ public class MainActivity extends AppCompatActivity implements BeerFragment.OnLi
 
     @Override
     public void onListFragmentInteraction(BeerSerializable beer) {
-        
+        BeerDetails beerDetails = BeerDetails.newInstance(beer);
+
+        FragmentManager fm = getFragmentManager();
+        fm.beginTransaction().replace(R.id.game_container, beerDetails).addToBackStack(null).commit();
     }
 
 
@@ -62,40 +76,6 @@ public class MainActivity extends AppCompatActivity implements BeerFragment.OnLi
 //        }
 //    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("lifeCycle", "onStart");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("lifeCycle", "onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("lifeCycle", "onDestroy");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("lifeCycle", "onPause");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d("lifeCycle", "onRestart");
-    }
 
 
 
