@@ -13,7 +13,10 @@ import android.view.ViewGroup;
 import com.example.epulapp.tpapplicationmobile.dummy.DummyContent;
 import com.example.epulapp.tpapplicationmobile.dummy.DummyContent.DummyItem;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
 
 /**
  * A fragment representing a list of Items.
@@ -28,6 +31,9 @@ public class BeerFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private RecyclerView myRecyclerView;
+    private MyBeerRecyclerViewAdapter myBeerRecyclerViewAdapter;
+    private BeerService.IBeerService iBeerService;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -55,15 +61,8 @@ public class BeerFragment extends Fragment {
         }
 
         // Récupération des Bières
-//        GetMethod get = new GetMethod("http://httpcomponents.apache.org");
-//        InputStream in = get.getResponseBodyAsStream();
-//        get.releaseConnection();
-//
-//        try(Reader reader = new InputStreamReader(JsonToJava.class.getResourceAsStream("/Server1.json"), "UTF-8")){
-//            Gson gson = new GsonBuilder().create();
-//            Person p = gson.fromJson(reader, Person.class);
-//            System.out.println(p);
-//        }
+//        BeerService beerService = new BeerService();
+//        Call<List<Beer>> beers = beerService.getListBeers();
     }
 
     @Override
@@ -75,12 +74,24 @@ public class BeerFragment extends Fragment {
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
-            recyclerView.setAdapter(new MyBeerRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            iBeerService = BeerService.getRSClient();
+            myRecyclerView = (RecyclerView)view.findViewById(R.id.list);
+            myBeerRecyclerViewAdapter = new MyBeerRecyclerViewAdapter(new ArrayList<BeerSerializable>(0), myRecyclerView, new MyBeerRecyclerViewAdapter.PostItemListener() {
+                @Override
+                public void onBeerClick(BeerSerializable beer) {
+                    mListener.onListFragmentInteraction(beer);
+                }
+            });
+
+
+
+//            if (mColumnCount <= 1) {
+//                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+//            } else {
+//                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+//            }
+//            recyclerView.setAdapter(new MyBeerRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }
@@ -115,6 +126,6 @@ public class BeerFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(BeerSerializable beer);
     }
 }
