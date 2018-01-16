@@ -49,23 +49,27 @@ public class MyBeerRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
         beerViewHolder.mABV.setText(String.format("%.2f", beer.getAbv()) + "%");
 
         Picasso.with(this.myContext).load(beer.getImage_url()).placeholder(R.mipmap.ic_launcher).into(beerViewHolder.mImage);
+    }
 
+    public void createEmptyItem() {
+        mValues.add(null);
+        notifyItemInserted(mValues.size() - 1);
+    }
 
-        ///////////////////////// OLD /////////////////////////
+    public void updateBeers(List<BeerSerializable> beers) {
+        removeLastEmptyItem();
 
-//        holder.mIdView.setText(mValues.get(position).id);
-//        holder.mContentView.setText(mValues.get(position).content);
-//
-//        holder.mView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (null != mListener) {
-//                    // Notify the active callbacks interface (the activity, if the
-//                    // fragment is attached to one) that an item has been selected.
-//                    mListener.onListFragmentInteraction(holder.mItem);
-//                }
-//            }
-//        });
+        for (BeerSerializable beer: beers) {
+            if (!mValues.contains(beer)) {
+                mValues.add(beer);
+                notifyItemInserted(mValues.size());
+            }
+        }
+    }
+
+    public void removeLastEmptyItem() {
+        mValues.remove(mValues.size() - 1);
+        notifyItemRemoved(mValues.size());
     }
 
     @Override

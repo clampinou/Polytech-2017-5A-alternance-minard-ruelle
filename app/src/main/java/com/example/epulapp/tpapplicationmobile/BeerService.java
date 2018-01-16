@@ -19,7 +19,6 @@ import retrofit2.http.Query;
 
 public class BeerService {
     IBeerService service;
-//    List<Beer> listBeers = new ArrayList<>();
 
     public interface IBeerService {
         @GET("beers")

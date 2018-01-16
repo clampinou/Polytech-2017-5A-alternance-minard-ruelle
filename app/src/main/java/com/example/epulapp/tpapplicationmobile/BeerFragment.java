@@ -3,20 +3,18 @@ package com.example.epulapp.tpapplicationmobile;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.example.epulapp.tpapplicationmobile.dummy.DummyContent;
-import com.example.epulapp.tpapplicationmobile.dummy.DummyContent.DummyItem;
-
+import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A fragment representing a list of Items.
@@ -40,6 +38,7 @@ public class BeerFragment extends Fragment {
      * fragment (e.g. upon screen orientation changes).
      */
     public BeerFragment() {
+
     }
 
     // TODO: Customize parameter initialization
@@ -59,10 +58,6 @@ public class BeerFragment extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
-
-        // Récupération des Bières
-//        BeerService beerService = new BeerService();
-//        Call<List<Beer>> beers = beerService.getListBeers();
     }
 
     @Override
@@ -84,14 +79,14 @@ public class BeerFragment extends Fragment {
                 }
             });
 
+            Handler handler = new Handler();
 
-
-//            if (mColumnCount <= 1) {
-//                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-//            } else {
-//                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-//            }
-//            recyclerView.setAdapter(new MyBeerRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    loadMoreBeers();
+                }
+            }, 1500);
         }
         return view;
     }
@@ -114,6 +109,33 @@ public class BeerFragment extends Fragment {
         mListener = null;
     }
 
+    public void loadMoreBeers() {
+        myBeerRecyclerViewAdapter.createEmptyItem();
+
+        iBeerService.getBeers().enqueue(new Callback<List<BeerSerializable>>() {
+            @Override
+            public void onResponse(Call<List<BeerSerializable>> call, Response<List<BeerSerializable>> response) {
+                if (response.isSuccessful()) {
+                    List<BeerSerializable> beers = response.body();
+                    if (beers.size() > 0) {
+                        myBeerRecyclerViewAdapter.updateBeers(response.body());
+                    } else {
+                        myBeerRecyclerViewAdapter.removeLastEmptyItem();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<BeerSerializable>> call, Throwable t) {
+                myBeerRecyclerViewAdapter.removeLastEmptyItem();
+
+                CharSequence charSequence = "Impossible de charger les bières :(";
+                Toast toast = Toast.makeText(getContext(), charSequence, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -125,7 +147,6 @@ public class BeerFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onListFragmentInteraction(BeerSerializable beer);
     }
 }
